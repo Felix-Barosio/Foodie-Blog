@@ -23,6 +23,12 @@ class RecipesController < ApplicationController
         render json: recipe, status: :ok
     end
 
+    def destroy
+        recipe = find_recipe
+        recipe.destroy
+        render json: { message: "Recipe Deleted"}, status: :not_found
+    end
+
     private
 
     def find_recipe

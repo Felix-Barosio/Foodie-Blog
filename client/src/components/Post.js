@@ -92,6 +92,22 @@ const Post = ({ posts, loadPosts }) => {
             }
         }
     }
+
+    // search filter
+    const searchItems = (searchValue) => {
+        setSearchInput(searchValue);
+        if (searchInput !== "") {
+            const filteredData = posts.filter((item) => {
+                return Object.values(item)
+                    .join("")
+                    .toLowerCase()
+                    .includes(searchInput.toLowerCase());
+            });
+            setFilteredResults(filteredData);
+        } else {
+            setFilteredResults(posts);
+        }
+    };
     return (
         <div>
         </div>

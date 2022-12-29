@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { BsFillPencilFill, BsFillTrashFill } from "react-icons/bs";
+import { Button, Modal, Form } from "react-bootstrap";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import { Link } from "react-router-dom";
 
 const api = "/recipes";
 
@@ -92,6 +96,26 @@ const Post = ({ posts, loadPosts }) => {
             }
         }
     }
+
+    const handleUpdate = (id) => {
+        const singleUser = posts.find((item) => item.id === id);
+        setState({ ...singleUser });
+        setUserId(id);
+        setEditMode(true);
+        handleShow();
+        // rerender the loadPosts function
+        loadPosts();
+    };
+
+    // handle the delete operation
+    const handleDelete = async (id) => {
+        if (window.confirm("Are you sure want to delete this post?")) {
+            axios.delete(`${api}/${id}`);
+            toast.success("Deleted Recipe Successfully!");
+            // rerender the loadPosts function
+            loadPosts();
+        }
+    };
 
     // search filter
     const searchItems = (searchValue) => {

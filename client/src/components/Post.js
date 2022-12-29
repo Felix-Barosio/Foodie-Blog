@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 const api = "/recipes";
 
@@ -22,6 +24,74 @@ const Post = ({ posts, loadPosts }) => {
     const [searchInput, setSearchInput] = useState("");
     const [filteredResults, setFilteredResults] = useState([]);
 
+    // object destructuring
+    const { meal_name,
+        image_url,
+        origin,
+        tags,
+        category,
+        ingredients,
+        video,
+        instructions
+    } = state;
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    // enable us to input data on the input fields
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setState({ ...state, [name]: value });
+    }
+
+    // handle the form submission
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (!meal_name || !image_url || !origin || !category || !ingredients || !video || !instructions) {
+            toast.error("Ensure to fill all fields!");
+        } else {
+            if (!editMode) {
+                axios.post(api, state);
+                toast.success("Recipe Added Succesfully!");
+                // restore the form input to default with no data
+                setState({
+                    meal_name: "",
+                    image_url: "",
+                    origin: "",
+                    tags: "",
+                    category: "",
+                    ingredients: "",
+                    video: "",
+                    instructions: ""
+                });
+                // close modal after sucessfull submission
+                handleClose();
+                // rerender the loadPosts function
+                loadPosts();
+            } else {
+                axios.patch(`${api}/${userId}`, state);
+                toast.success("Update Succesfully Done!");
+                // restore the form input to default with no data
+                setState({
+                    meal_name: "",
+                    image_url: "",
+                    origin: "",
+                    tags: "",
+                    category: "",
+                    ingredients: "",
+                    video: "",
+                    instructions: ""
+                });
+                // close modal after sucessfull submission
+                handleClose();
+                // rerender the loadPosts function
+                loadPosts();
+                setUserId(null);
+                setEditMode(false);
+
+            }
+        }
+    }
     return (
         <div>
         </div>

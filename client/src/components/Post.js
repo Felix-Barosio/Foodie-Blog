@@ -153,6 +153,182 @@ const Post = ({ posts, loadPosts }) => {
                     </form>
                 </div>
             </div>
+
+            <div className="row">
+                {searchInput.length > 1
+                    ? filteredResults.map(({ meal_name, image_url, origin, tags, category, ingredients, instructions, id }) => {
+                        return (
+                            <div className="col-md-4" key={id}>
+                                <div className="post__wrapper">
+                                    <h4 className="p-2 text-center food__head">{meal_name}</h4>
+                                    <div className="post__image_url">
+                                        <img src={image_url} alt={meal_name}></img>
+                                    </div>
+                                    <p className="story__desc"><h6 className="food__body">Country of Origin</h6>{origin}</p>
+                                    <p className="story__desc"><h6 className="food__body">Food Category</h6> {category}</p>
+                                    <p className="story__desc"><h6 className="food__body">Food Tag</h6> {tags}</p>
+                                    <p className="story__desc"><h5 className="food__body">Recipe Ingredients</h5>{ingredients}</p>
+                                    {/* <a src={video} alt={BsYoutube} >{video}</a> */}
+                                    <p className="story__desc"><h5 className="food__body">How to Prepare</h5>{instructions}</p>
+                                    <div className="action__icons">
+                                        <div
+                                            className="post__edit"
+                                            onClick={() => handleUpdate(id)}
+                                        >
+                                            <BsFillPencilFill />
+                                        </div>
+                                        <div
+                                            className="post__delete"
+                                            onClick={() => handleDelete(id)}
+                                        >
+                                            <BsFillTrashFill />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })
+                    : posts.map(({ meal_name, image_url, origin, category, tags, ingredients, video, instructions, id }) => {
+                        return (
+                            <div className="col-md-6" key={id}>
+                                <div className="post__wrapper">
+                                    <h4 className="p-2 text-center food__head">{meal_name}</h4>
+                                    <div className="post__image_url">
+                                        <img src={image_url} alt={meal_name}></img>
+                                    </div>
+                                    <p className="story__desc"><h6 className="food__body">Country of Origin</h6>{origin}</p>
+                                    <p className="story__desc"><h6 className="food__body">Food Category</h6>{category}</p>
+                                    <p className="story__desc"><h6 className="food__body">Food Tag</h6> {tags}</p>
+                                    <p className="story__desc"><h5 className="food__body">Recipe Ingredients</h5>{ingredients}</p>
+                                    {/* <Link src={video} alt={BsYoutube} ><BsYoutube />Youtube</Link> */}
+                                    <p className="story__desc"><h5 className="food__body">How to Prepare</h5>{instructions}</p>
+                                    <div className="action__icons">
+                                        <div
+                                            className="post__edit"
+                                            onClick={() => handleUpdate(id)}
+                                        >
+                                            <BsFillPencilFill />
+                                        </div>
+                                        <div
+                                            className="post__delete"
+                                            onClick={() => handleDelete(id)}
+                                        >
+                                            <BsFillTrashFill />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+            </div>
+
+            {/* toast action message notification */}
+            <ToastContainer />
+
+            <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+            >
+                <Modal.Header>
+                    <Modal.Title>
+                        <h4 className="text-center">Create Receipe Post</h4>
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group className="mb-3" controlId="formBasicPostTitle">
+                            <Form.Label className="form__label">Recipe Title</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter meal_name"
+                                name="meal_name"
+                                value={meal_name}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicimage_urlLink">
+                            <Form.Label className="form__label">Image_url Link</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Paste your blog image_url here"
+                                name="image_url"
+                                value={image_url}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicOrigin">
+                            <Form.Label className="form__label">Origin</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter country of origin"
+                                name="origin"
+                                value={origin}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicCategory">
+                            <Form.Label className="form__label">Category</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter receipe category"
+                                name="category"
+                                value={category}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicCategory">
+                            <Form.Label className="form__label">Tags</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter receipe tag"
+                                name="tags"
+                                value={tags}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicIngredients">
+                            <Form.Label className="form__label">Ingredients</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                placeholder="Enter receipe ingredients"
+                                style={{ height: "120px" }}
+                                name="ingredients"
+                                value={ingredients}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicYoutube_Video">
+                            <Form.Label className="form__label">Youtube Video</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Paste your blog image_url here"
+                                name="video"
+                                value={video}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Label className="form__label">Instructions on how to cook</Form.Label>
+                        <Form.Control
+                            as="textarea"
+                            placeholder="Write you Instructions here"
+                            style={{ height: "120px" }}
+                            name="instructions"
+                            value={instructions}
+                            onChange={handleChange}
+                        />
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Cancel
+                            </Button>
+                            <Button variant="primary" type="submit">
+                                {editMode ? "Update" : "Post"}
+                            </Button>
+                        </Modal.Footer>
+                    </Form>
+                </Modal.Body>
+            </Modal>
         </div>
     );
 };

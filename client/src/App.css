@@ -8,6 +8,157 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* nav bar section */
+.header {
+  background-color: #268da3;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-radius: 0.2rem;
+  margin-bottom: 0.1rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  max-width: 1500px;
+}
+
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  font-family: 'Oleo Script', cursive;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 60vw;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.nav-links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 80px;
+}
+
+.nav-links a {
+  font-weight: 700;
+}
+
+.nav-links:hover {
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
+}
+
+:root {
+  --primary: #fff;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: #242424;
+  border: 1px solid var(--primary);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+}
+
+.btn--medium {
+  padding: 8px 20px;
+  font-size: 18px;
+}
+
+.btn--large {
+  padding: 12rem 26rem;
+  font-size: 10rem;
+}
+
+.btn--large:hover,
+.btn--medium:hover {
+  transition: all 0.3s ease-out;
+  background: #fff;
+  color: #242424;
+  transition: 250ms;
+}
+
+/* home section */
+.home-container {
+  background: url('https://media.gettyimages.com/vectors/overhead-angle-of-a-person-using-apps-online-for-cooking-vector-id641803276?s=2048x2048') center center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+  margin-bottom: 0.4rem;
+}
+
+.home-container > h1 {
+  color: #fff;
+  font-size: 100px;
+  margin-top: -100px;
+}
+
+.home-container > p {
+  margin-top: 4px;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.home-btns {
+  margin-top: 32px;
+  border-radius: 22px;
+}
+
+.home-btns .btn {
+  margin: 6px;
+  font-size: 22px;
+}
+
+.fa-play-circle {
+  margin-left: 4px;
+}
+
 /* posting page */
 .post__image_url img {
   width: 100%;
@@ -83,4 +234,36 @@ body {
   font-size: 1.3rem;
   width: 45%;
   /* background-color: green !important; */
+}
+
+/* contact page */
+.contact-us  {
+  width: 85%;
+  height: 100vh;
+  margin: 4rem auto 0 auto;
+  display: flex;
+}
+
+.contact-message {
+  width: 50%;
+  padding: 2em;
+  margin: 4rem auto 0 auto;
+}
+
+.contact-message h1 {
+  margin-bottom: 0.5em;
+  font-family: 'Oleo Script', cursive;
+  font-weight: 200;
+  font-size: 3.4rem;
+}
+
+.contact-message p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 100;
+}
+
+.contact-form {
+  width: 60%;
+  font-family: 'Space Grotesk', sans-serif;
 }

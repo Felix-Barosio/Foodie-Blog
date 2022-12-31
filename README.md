@@ -2,6 +2,47 @@
 
 Simple Receipe Blog App.
 
+## Table of content
+
+- [Technologies Used](#technologies-used)
+- [Installation](#installation--set-up)
+- [Contributions](#contributions)
+- [License and Copyright](#license-and-copyright)
+- [Author Info](#author-info)
+
+## Technologies Used
+
+- Rails APIs
+- React
+- Active Record
+- SQLite
+
+## Installation & Set up
+
+Clone the repository
+
+```
+https://github.com/Felix-Barosio/Foodie-Blog
+```
+
+Install dependecies
+
+```
+bundle install
+```
+```
+npm install --prefix client
+```
+
+Run
+
+```
+rails s
+```
+```
+npm start --prefix client
+```
+
 ## Contributions
 
 1. Fork this repository.

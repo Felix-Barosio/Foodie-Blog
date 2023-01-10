@@ -15,7 +15,7 @@ Simple Receipe Blog App.
 - Rails APIs
 - React
 - Active Record
-- SQLite
+- PostgreSQL
 
 ## Installation & Set up
 
@@ -30,6 +30,15 @@ Install dependecies
 ```
 bundle install
 ```
+
+```
+rails db:create
+```
+
+```
+rails db:seed
+```
+
 ```
 npm install --prefix client
 ```
@@ -39,6 +48,7 @@ Run
 ```
 rails s
 ```
+
 ```
 npm start --prefix client
 ```

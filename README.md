@@ -6,6 +6,7 @@ Simple Receipe Blog App.
 
 - [Technologies Used](#technologies-used)
 - [Installation](#installation--set-up)
+- [Deployment](#deployment)
 - [Contributions](#contributions)
 - [License and Copyright](#license-and-copyright)
 - [Author Info](#author-info)
@@ -16,6 +17,7 @@ Simple Receipe Blog App.
 - React
 - Active Record
 - PostgreSQL
+- Render - Deployment
 
 ## Installation & Set up
 
@@ -52,6 +54,10 @@ rails s
 ```
 npm start --prefix client
 ```
+
+## Deployment
+
+[Live Link]()
 
 ## Contributions
 

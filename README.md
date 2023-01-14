@@ -57,7 +57,7 @@ npm start --prefix client
 
 ## Deployment
 
-[Live Link]()
+[Live Link](https://foodie-blog.onrender.com/)
 
 ## Contributions
 

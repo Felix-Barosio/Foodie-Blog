@@ -1,14 +1,14 @@
-# Recipe Blog App
+# Foodie Blog App
 
 By Felix Barosio
 
-This is a Recipe blog app that allows you to create, read, update and delete a task.
+This is a Recipe app that allows you to create, read, update and delete a recipes.
 
 ## License and Copyright.
 
 [MIT license](https://opensource.org/licenses/MIT)
 
-Copyright (c) [2022] [Felix Barosio]
+Copyright (c) [2023] [Felix Barosio]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

@@ -260,3 +260,42 @@ color: green;
   font-family: 'Space Grotesk', sans-serif;
 }
 
+.about{
+  width : 100vw;
+  height : 100vh;
+  margin-top: 80px;
+  margin-left: 70px;   
+}
+
+.image-container{
+  margin-top: 50px;
+}
+
+.image-container img{
+  width : 100%;
+  object-fit : cover;
+  animation: spin 120s linear infinite;  
+}
+
+.about-text{
+  line-height: 1.9;
+  text-align: left;
+  margin: 50px 20px;
+}
+
+/* media */
+@media screen and (max-width: 768px){
+  .about{
+      margin-top: 70px;
+      margin-left: 0;
+  }
+  .image-container{
+      margin-top: 20px;
+  }
+  .about-text{
+      margin: 20px 10px;
+      font-size: 14px;
+      line-height: 2;
+  }
+}
+

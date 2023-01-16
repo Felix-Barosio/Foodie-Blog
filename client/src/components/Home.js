@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './Button'
 import png from '../images/img.png'
+import About from './About';
 
 function Home() {
     return (
@@ -27,6 +28,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <About />
         </div>
     )
 }

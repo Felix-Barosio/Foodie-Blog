@@ -13,7 +13,7 @@ Simple Receipe Blog App.
 
 ## Technologies Used
 
-- Rails APIs
+- Rails
 - React
 - Active Record
 - PostgreSQL
@@ -45,7 +45,7 @@ rails db:seed
 npm install --prefix client
 ```
 
-Run
+Run/Start
 
 ```
 rails s

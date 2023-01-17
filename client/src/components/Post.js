@@ -4,6 +4,7 @@ import { Button, Modal, Form } from "react-bootstrap";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavBar from "./landingpage/navbar/NavBar";
 // import { Link } from "react-router-dom";
 
 const api = "/recipes";
@@ -134,23 +135,26 @@ const Post = ({ posts, loadPosts }) => {
     };
     return (
         <div>
-            <div className="row d-flex align-items-center">
-                <div className="col-md-8">
-                    <Button variant="secondary" className="post__recipe" onClick={handleShow}>
-                        Post Recipe.
-                    </Button>
-                </div>
-                <div className="col-md-4">
-                    <form action="">
-                        <div className="blog__search">
-                            <input
-                                type="search"
-                                className="header-search-input"
-                                placeholder="Search Receipe"
-                                onChange={(e) => searchItems(e.target.value)}
-                            />
-                        </div>
-                    </form>
+            <NavBar />
+            <div className="try">
+                <div className="row d-flex align-items-center">
+                    <div className="col-md-8">
+                        <Button variant="secondary" className="post__recipe" onClick={handleShow}>
+                            Post Recipe.
+                        </Button>
+                    </div>
+                    <div className="col-md-4">
+                        <form action="">
+                            <div className="blog__search">
+                                <input
+                                    type="search"
+                                    className="header-search-input"
+                                    placeholder="Search Receipe"
+                                    onChange={(e) => searchItems(e.target.value)}
+                                />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 

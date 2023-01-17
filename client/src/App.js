@@ -4,8 +4,9 @@ import Post from './components/Post';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
-import NavBar from './components/NavBar';
-import Contact from './components/Contact';
+import NavBar from './components/landingpage/navbar/NavBar';
+// import NavBar from './components/NavBar';
+// import Contact from './components/Contact';
 
 
 const api = "/recipes"
@@ -25,11 +26,10 @@ function App() {
 
   return (
     <div className="container-fluid">
-      <NavBar />
       <Routes>
-        <Route exact path='/' element={<Home />}></Route>
-        <Route exact path='/post' element={<Post posts={post} loadPosts={loadPosts} />} ></Route>
-        <Route exact path='/contact' element={<Contact />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/post' element={<Post posts={post} loadPosts={loadPosts} />} ></Route>
+        {/* <Route exact path='/contact' element={<Contact />}></Route> */}
       </Routes>
     </div>
   );

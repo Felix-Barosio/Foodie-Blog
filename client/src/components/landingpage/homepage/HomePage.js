@@ -21,7 +21,7 @@ function HomePage() {
                             <button onClick={() => navigate('/post')} className="btn btn-primary" type="submit">Get Started</button>
                         </Col>
                         <Col md={6} className="home-image">
-                            <img src={png} alt="doctor" className="nyv" style={{ width: "100%" }} />
+                            <img src={png} alt="food" className="nyv" style={{ width: "100%" }} />
                         </Col>
                     </Row>
                 </Container>
